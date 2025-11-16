@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Geotechnical Engineering Lab Design System */
+
+@layer base {
+  :root {
+    /* Base Colors - Geotechnical Theme */
+    --background: 210 40% 98%;
+    --foreground: 220 39% 11%;
+
+    /* Deep Slate - Primary */
+    --primary: 210 45% 10%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 210 45% 15%;
+    
+    /* Clay Red - Accent */
+    --clay-red: 9 56% 49%;
+    --clay-red-foreground: 210 40% 98%;
+    --clay-red-light: 9 56% 65%;
+    
+    /* Sand Beige - Secondary */
+    --sand-beige: 36 46% 70%;
+    --sand-beige-foreground: 220 39% 11%;
+    --sand-beige-dark: 36 46% 55%;
+    
+    /* Teal - Info/Data */
+    --teal: 200 52% 35%;
+    --teal-foreground: 210 40% 98%;
+    --teal-light: 200 52% 50%;
+
+    /* Card & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 39% 11%;
+    --card-border: 220 13% 91%;
+
+    /* Interactive Elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 39% 11%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 210 45% 10%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 200 52% 35%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 200 52% 35%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 210 45% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 200 52% 35%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 45% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 210 45% 15%;
+    --sidebar-ring: 200 52% 50%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 45% 10%), hsl(200 52% 35%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(9 56% 49%), hsl(36 46% 70%));
+    
+    /* Shadows */
+    --shadow-card: 0 2px 8px -2px hsl(220 39% 11% / 0.08);
+    --shadow-card-hover: 0 8px 24px -4px hsl(220 39% 11% / 0.12);
+    --shadow-elegant: 0 10px 30px -10px hsl(200 52% 35% / 0.15);
+    
+    /* Animations - Engineering Precision */
+    --transition-smooth: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+    --transition-accordion: all 0.36s cubic-bezier(0.2, 0.8, 0.2, 1);
+    --transition-micro: all 0.12s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .dark {
+    --background: 210 45% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 45% 12%;
+    --card-foreground: 210 40% 98%;
+    --card-border: 210 45% 20%;
+
+    --popover: 210 45% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 52% 50%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 200 52% 60%;
+
+    --secondary: 210 45% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 45% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 200 52% 35%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 45% 20%;
+    --input: 210 45% 20%;
+    --ring: 200 52% 50%;
+
+    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 8px 24px -4px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+  }
+}
+
+@layer utilities {
+  /* Engineering-grade animations */
+  .animate-fade-in {
+    animation: fade-in 0.22s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.22s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.22s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  .animate-stagger {
+    animation: fade-in 0.22s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px -4px hsl(var(--primary) / 0.12);
+  }
+
+  /* Card flip animation */
+  .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    backface-visibility: hidden;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--clay-red)), hsl(var(--teal)));
+  }
+
+  /* Glass effect */
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/80 border border-white/20;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
